@@ -1,7 +1,14 @@
 const dbConnection = require('../../config/dbConnection')
+const User = require('../../models/User')
 module.exports = {
-  list(req,res,next){
+  async list(req,res,next){
     dbConnection()
-    res.json({User: "Rota de Listar User Funcionando"}).status(400)
+
+    const usuario = await User.find({})
+    const [{name, sobrename}] = usuario
+    res.json({usuario: name }).status(400)
+  },
+  async create(req, res, next){
+    
   }
 }

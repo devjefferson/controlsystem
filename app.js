@@ -1,4 +1,5 @@
 const server = require('./src/config/Server')
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
+const HOST = '0.0.0.0';
 
-server.listen(port)
+server.listen(PORT, HOST);
